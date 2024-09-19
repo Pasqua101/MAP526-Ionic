@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="form">
+
+    <ion-input label-placement="start" [(ngModel)]="emailInput">Please Enter Your Email: </ion-input>
+
+    <ion-input label-placement="start" [(ngModel)]="passwordInput" type="password">Please Enter Your Password: </ion-input>
+
+    <ion-button (click)="login()">Login</ion-button>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> List of Digimon </ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/persistence-demo']">
+        Persistence Demo
+      </ion-button>
+      <ion-button [routerLink]="['/add-to-team']"> View Team </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">List of Digimon</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-list>
+    <ion-item
+      *ngFor="let currDigimon of digimonList"
+      lines="full"
+      button
+      (click)="rowPressed(currDigimon.name)"
+    >
+      <ion-avatar slot="start">
+        <img src="{{ currDigimon.img }}" />
+      </ion-avatar>
+      <ion-label>
+        <p>{{ currDigimon.name}}</p>
+        <p>{{ currDigimon.level}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

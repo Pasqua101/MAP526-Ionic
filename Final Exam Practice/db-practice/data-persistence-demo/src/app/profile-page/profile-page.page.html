@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>profile-page</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-label>Profile Change Page</ion-label>
+
+  <div class="userInfo">
+    <ion-input label-placement="start" [(ngModel)]="newName">Name: </ion-input>
+    <ion-input label-placement="start" [(ngModel)]="newEmail">Email: </ion-input>
+    <ion-input label-placement="start" [(ngModel)]="newPassword">Password: </ion-input>
+  </div>
+
+  <ion-button (click)="saveUser()">Save Information</ion-button>
+  <ion-button (click)="logout()">Log out</ion-button>
+
+  <ion-list>
+    <ion-item *ngFor="let car of carsList">
+      <ion-label>{{car.model}}</ion-label>
+      <ion-button *ngIf="car.isElectric">Green Vehicle Enviromentally Friendly!</ion-button>
+    </ion-item>
+  </ion-list>
+  <!-- <ion-label>Select a fruit</ion-label>
+  <ion-select placeholder="Apple" (ionChange)="(onFruitSelected($event))">
+    <ion-select-option *ngFor="let item of items" [value]="item">
+      {{formatFruit(item)}}
+    </ion-select-option>
+  </ion-select>
+
+
+  <ion-item *ngIf="selectedFruit">
+    <ion-label>The fruit you would like to buy is: {{formatFruit(selectedFruit)}}</ion-label>
+  </ion-item> -->
+
+  <!-- using ionInput on the searchBar to trigger a function called filterFruits, that goes through the filteredFruits array and displays any fruits that match the input-->
+  <ion-searchbar placeholder="Search" (ionInput)="filterFruits($event)"></ion-searchbar>  
+
+  <ion-list>
+    <ion-item *ngFor="let fruit of filteredFruits"> <!-- Using *ngFor to display all the fruits in the list-->
+      <ion-label>{{fruit}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Components Page</ion-title>
+    <ion-menu-button slot="start"></ion-menu-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <div>
+    <ion-label>Please enter your name:</ion-label>
+    <ion-input [(ngModel)]="name"></ion-input>
+
+    <br>
+    <ion-label>Please enter your age:</ion-label>
+    <ion-input [(ngModel)]="age"></ion-input>
+
+    <ion-checkbox labelPlacement="start" [(ngModel)]="playGames">
+      Do you play video games?
+    </ion-checkbox>
+    
+    <br>
+    
+    <ion-label>Here is a static list:</ion-label>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Pokemon Yellow</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Mega Man X</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>The Legend of Zelda</ion-label>
+      </ion-item>
+    </ion-list>
+
+
+    <br>
+    <ion-label>Here is a dynamic list</ion-label>
+    <!-- NgFor - executing a loop in the HTML code -->
+    <ion-list>
+      <ion-item *ngFor="let fruit of fruitsList">
+        <p>{{fruit}}</p>
+      </ion-item>
+      
+    </ion-list>
+
+    
+
+    <ion-button (click)="submit()">Submit</ion-button>
+  </div>
+
+</ion-content>
