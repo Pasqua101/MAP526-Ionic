@@ -1,0 +1,97 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Marco's Car Rental Form
+    </ion-title>
+  </ion-toolbar>
+
+  <script src="home.page.ts"></script>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Marco's Car Rental Form</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="form">
+
+    <div id="error-div" hidden>
+      <label>Please fix these issues with your form: </label>
+      <ul>
+        <li id="car-type-error" hidden>Car Type: You must select a car type</li>
+        <li id="reservation-error" hidden>Reservation Date: You must enter a valid date</li>
+        <li id="hours-error" hiddne>Hours: You must enter a value between 1-96</li>
+      </ul>
+    </div>
+
+
+    <label>Please Select a Type of Car:</label>
+    <select class="dropDownMenu" [(ngModel)]="carType">
+      <option value="" selected>Select a type</option> <!--Acts as a placeholder-->
+      <option value="Sedan">Sedan</option>
+      <option value="SUV">SUV</option>
+    </select>
+
+    <br>
+  
+    <label>Please Enter a Reservation Date (MM/DD/YYYY):</label>
+    <input type="date" [(ngModel)]="reservationDate"> <!--TODO: Just make this a textbox, as requested. This doesn't work-->
+  
+    <label class="hours-label"> How many hours would you like to rent the car for? </label>
+    <label> Selected Hours: 
+      <input class="hours-input" type="number" [(ngModel)]="selectedHours"> 
+    </label>
+
+  
+    <label>
+      Do You Require a Children's Car Seat?  <input class="car-seat-checkbox" type="checkbox" [(ngModel)]="childsSeatRequired" />
+    </label>
+  
+    <button class="button-submit" type="button" (click)="reserveClicked()">Reserve</button> 
+    <button class="button-reset" type="button" (click)="resetClicked()">Reset</button> 
+  
+
+  </div>
+  
+
+  <!-- <div>
+    
+    <ion-list>
+      <ion-item>
+
+        <ion-select label="Type of Car:" placeholder="Select a Type" [(ngModel)]="carType">
+          <ion-select-option value="sedan">Sedan</ion-select-option>
+          <ion-select-option value="suv">SUV</ion-select-option>
+        </ion-select>
+
+      </ion-item>
+    
+
+      <ion-label>Please Select a Reservation Date:</ion-label>
+      <ion-datetime display-format="MMM DD, YYYY" picker-format="MMM DD, YYYY" [(ngModel)]="reservationDate"></ion-datetime>
+       ^ Use 3 Ms to get something like Mar or Dec in the output, or 2 Ms to get the number of the month 
+
+
+      <ion-label>
+        How many hour would you like to rent the car for?
+        <br>
+        Seleced Hours: {{selectedHours}}
+      </ion-label>
+
+      <br>
+      <ion-button (click)="decreaseStepper()">-</ion-button>
+      <ion-button (click)="increaseStepper()">+</ion-button>
+
+      
+
+      <ion-checkbox labelPlacement="start" [(ngModel)]="childsSeatRequired">Do You Require a Children's Car Seat?</ion-checkbox>
+
+      <ion-button (click)="reserveClicked()">Reserve</ion-button>
+      <ion-button (click)="resetClicked()">Reset</ion-button>
+    
+    </ion-list>
+
+  </div> -->
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "multi-page-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

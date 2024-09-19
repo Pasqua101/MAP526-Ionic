@@ -1,0 +1,7 @@
+{
+  "name": "A3Marco",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

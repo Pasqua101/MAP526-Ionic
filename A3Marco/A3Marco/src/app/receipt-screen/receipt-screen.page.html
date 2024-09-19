@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Your Receipt</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">receipt-screen</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <div class="reciept-display">
+    <h1>Reservation Confirmed!</h1>
+
+    
+    <label>Reservation Number: RES-{{reservationId}} </label>
+    
+    <label>Car Type: {{carType}}</label>
+    
+    <label>Length of Rental: {{lengthOfRental}} hours</label>
+    
+    <label>Pickup Date: {{pickupDate}}</label>
+    
+    <label>Car Seat Required?: {{carSeatRequired}}</label>
+    
+    <label>Subtotal: ${{subtotalStr}}</label>
+    
+    <label>Tax: ${{taxStr}}</label>
+    
+    <label>Total: ${{totalStr}}</label>
+  </div>
+
+</ion-content>

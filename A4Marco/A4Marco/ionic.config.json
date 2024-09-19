@@ -1,0 +1,7 @@
+{
+  "name": "A4Marco",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

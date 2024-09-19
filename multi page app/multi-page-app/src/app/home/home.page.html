@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Blank </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <h1>{{text}}</h1>
+    <label>Enter your name:</label>
+    <input type="text" placeholder="Your name goes here" [(ngModel)]="name" />
+    <br>
+    <label>Enter your age:</label>
+    <input type="text" placeholder="Your age goes here" [(ngModel)]="age" />
+    <div class="btn">
+      <button (click)="buttonSubmit()">Submit</button>
+      <br>
+      <button (click)="buttonReset()">Reset</button>
+
+      <!-- <a [routerLink]="['/second-page']">Navigate to Page 2</a> -->
+      <!-- ^ this is static routing. This is done in HTML. Dynamic routing is done in TS -->
+    </div>
+  </div>
+</ion-content>

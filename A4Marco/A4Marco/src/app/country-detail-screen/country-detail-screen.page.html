@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    
+    <ion-buttons slot="start"  nav-direction="back">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Country Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="country-details">
+    <ion-img src={{country.flag}}></ion-img>
+    <br>
+    <ion-label>{{country.name}}</ion-label>
+    <br>
+    <ion-label>Country Code: {{alpha3Code}}</ion-label>
+    <br>
+    <ion-label>Capital: {{country.capital}} </ion-label>
+    <br>
+    <ion-label>The population of {{country.name}} is {{formatPopulation(country.population)}}</ion-label>
+
+    <ion-button fill="outline" id="addToFavorites" (click)="addToFavorites()">
+      <ion-icon slot="start" name="star"></ion-icon> 
+      ADD TO FAVORITES
+    </ion-button>
+
+    <ion-toast 
+      id="toast-message"
+      [isOpen]="toastIsOpen"
+      trigger="addToFavorites" 
+      position="bottom"
+      positionAnchor="nav-bar"
+      [message]="toastMessage" 
+      swipeGesture="vertical"
+    ></ion-toast>
+    <!-- Note on the positionAnchor, it uses the id of whatever the Header or Footer is of the page. So this way it won't draw 
+     over an element like the header, footer or tab-bar. So in this case, I told it to not draw over the tab-bar that has the id 
+     that I declared 'nav-bar' -->
+  </div>
+</ion-content>
